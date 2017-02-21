@@ -3,16 +3,19 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page One</ion-title>
+    <ion-title>QuestionBlockList</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>QuestionBlockList</h3>
+  <ion-input class="searchinput"></ion-input>
+<ion-list class="questionBlockList">
+  <ion-item class="questionBlockListItem" *ngFor="let questionBlock of questionBlocks">
+    <h2>{{questionBlock.name}}</h2>
+    <h3>{{questionBlock.description}}</h3>
+    <p>{{questionBlock.questions.length}}</p>
+  </ion-item>
+</ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

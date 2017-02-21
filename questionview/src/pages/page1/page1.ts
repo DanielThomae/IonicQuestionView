@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { Datasource } from '../../providers/datasource';
 
 @Component({
   selector: 'page-page1',
@@ -8,8 +9,10 @@ import { NavController } from 'ionic-angular';
 })
 export class Page1 {
 
-  constructor(public navCtrl: NavController) {
-    
+public questionBlocks = [];
+
+  constructor(public navCtrl: NavController, datasource: Datasource) {
+    this.questionBlocks = datasource.questionBlocks;
   }
 
 }
