@@ -3,15 +3,16 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>QuestionBlockList</ion-title>
+    <ion-title>questionBlocksView</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h3>QuestionBlockList</h3>
   <ion-input class="searchinput"></ion-input>
-<ion-list class="questionBlockList">
-  <ion-item class="questionBlockListItem" *ngFor="let questionBlock of questionBlocks">
+<ion-list>
+  <ion-item class="questionBlockListItem" *ngFor="let questionBlock of questionBlocks"
+      (click)="itemClicked(questionBlock.id)">
     <h2>{{questionBlock.name}}</h2>
     <h3>{{questionBlock.description}}</h3>
     <p>{{questionBlock.questions.length}}</p>

@@ -15,17 +15,53 @@ public questionBlocks = new Array<QuestionBlock>();
 
 
   constructor(public http: Http) {
-   let testQuestionBlock = new QuestionBlock();
-   testQuestionBlock.name = "Testfrageblock";
-   testQuestionBlock.description="hier kommt ein Hinweis";
-   let testQuestion = new Question();
-   testQuestion.text = "Testfrage";
 
-   testQuestionBlock.questions.push(testQuestion);
-   testQuestionBlock.questions.push(testQuestion);
-   this.questionBlocks.push(testQuestionBlock);
-   this.questionBlocks.push(testQuestionBlock);
-   this.questionBlocks.push(testQuestionBlock);
+    let testQuestionBlock = new QuestionBlock();
+    testQuestionBlock.name = "Testfrageblock";
+    testQuestionBlock.id = 0;
+    testQuestionBlock.description="hier kommt ein Hinweis";
+    let testQuestion = new Question();
+    testQuestion.text = "Testfrage";
+    testQuestion.id = 0;
+    let testAnswer1 = new Answer();
+    testAnswer1.id = 0;
+    testAnswer1.text = "richtig";
+    testAnswer1.isCorrect = true;
+    let testAnswer2 = new Answer();
+    testAnswer2.id = 1;
+    testAnswer2.text = "falsch";
+    testAnswer2.isCorrect = false;
+
+    let testQuestionBlock2 = new QuestionBlock();
+    testQuestionBlock2.name = "Wirtschaftsinformatiker";
+    testQuestionBlock2.id = 1;
+    testQuestionBlock2.description="Idiotengruppe";
+    let testQuestion2 = new Question();
+    testQuestion2.text = "Sind sie richtige Informatiker?";
+    testQuestion2.id = 1;
+    let testAnswer3 = new Answer();
+    testAnswer3.id = 0;
+    testAnswer3.text = "Der Witz war gut";
+    testAnswer3.isCorrect = true;
+    let testAnswer4 = new Answer();
+    testAnswer4.id = 1;
+    testAnswer4.text = "Sie geben ihr Bestes";
+    testAnswer4.isCorrect = false;
+    let testAnswer5 = new Answer();
+    testAnswer5.id = 1;
+    testAnswer5.text = "Sie können nichts dafür";
+    testAnswer5.isCorrect = false;
+
+    testQuestion.answers.push(testAnswer1);
+    testQuestion.answers.push(testAnswer2);
+    testQuestion2.answers.push(testAnswer3);
+    testQuestion2.answers.push(testAnswer4);
+    testQuestion2.answers.push(testAnswer5);
+    testQuestionBlock.questions.push(testQuestion);
+    testQuestionBlock.questions.push(testQuestion);
+    testQuestionBlock2.questions.push(testQuestion2);
+    this.questionBlocks.push(testQuestionBlock);
+    this.questionBlocks.push(testQuestionBlock2);
   }
 
   getQuestionBlocks(){
@@ -55,5 +91,11 @@ class QuestionBlock{
 class Question{
   id:number;
   text: string;
-  answers = new Array();
+  answers = new Array<Answer>();
+}
+
+class Answer{
+  id:number;
+  text:string;
+  isCorrect:boolean;
 }

@@ -1,15 +1,17 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
+import { QuestionBlocksView } from '../pages/questionBlocksView/questionBlocksView';
+import { QuestionBlockView } from '../pages/questionBlockView/questionBlockView';
+import { QuestionView } from '../pages/questionView/questionView';
 import { Datasource } from '../providers/datasource';
 
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
-    Page2
+    QuestionBlocksView,
+    QuestionBlockView,
+    QuestionView
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,8 +19,9 @@ import { Datasource } from '../providers/datasource';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Page1,
-    Page2
+    QuestionBlocksView,
+    QuestionBlockView,
+    QuestionView
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler },Datasource]
 })

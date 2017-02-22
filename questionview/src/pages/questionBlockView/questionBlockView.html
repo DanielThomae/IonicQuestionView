@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Page Two</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<input [(ngModel)]="questionBlock.name" class="questionBlock">
+<ion-list>
+  <ion-item *ngFor="let question of questionBlock.questions" (click)="itemClicked(questionBlock.id,question.id)">
+    <h1>{{question.text}}</h1>
+    <h3>{{question.answers.length}}</h3>
+  </ion-item>
+</ion-list>
+
+</ion-content>
