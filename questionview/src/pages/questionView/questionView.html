@@ -7,16 +7,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>questionView</ion-title>
+    <ion-title>Frage</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list radio-group [(ngModel)]="question.typ">
+    <ion-list-header>Fragetyp</ion-list-header>
+    <ion-item>
+      <ion-label>Umfrage</ion-label>
+      <ion-radio  value="Umfrage"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quiz</ion-label>
+      <ion-radio value="Quiz"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="question.category">
+    <ion-list-header>Fragekategorie</ion-list-header>
+    <ion-item>
+      <ion-label>Singlechoice</ion-label>
+      <ion-radio  value="Singlechoice"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Multiplechoice</ion-label>
+      <ion-radio value="Multiplechoice"></ion-radio>
+    </ion-item>
+  </ion-list>
+
     <ion-list>
+      <ion-list-header>Antworten</ion-list-header>
       <ion-item *ngFor="let answer of question.answers">
-        <h1>{{answer.text}}</h1>
+        <h2>{{answer.text}}</h2>
       </ion-item>
     </ion-list>
+
 </ion-content>

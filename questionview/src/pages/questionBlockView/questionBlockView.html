@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page Two</ion-title>
+    <ion-title>Fragen</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 <input [(ngModel)]="questionBlock.name" class="questionBlock">
 <ion-list>
   <ion-item *ngFor="let question of questionBlock.questions" (click)="itemClicked(questionBlock.id,question.id)">
-    <h1>{{question.text}}</h1>
+    <h2>{{question.text}}</h2>
     <h3>{{question.answers.length}}</h3>
   </ion-item>
 </ion-list>

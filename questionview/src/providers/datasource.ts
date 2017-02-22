@@ -19,10 +19,10 @@ public questionBlocks = new Array<QuestionBlock>();
     let testQuestionBlock = new QuestionBlock();
     testQuestionBlock.name = "Testfrageblock";
     testQuestionBlock.id = 0;
-    testQuestionBlock.description="hier kommt ein Hinweis";
     let testQuestion = new Question();
     testQuestion.text = "Testfrage";
     testQuestion.id = 0;
+    testQuestion
     let testAnswer1 = new Answer();
     testAnswer1.id = 0;
     testAnswer1.text = "richtig";
@@ -35,7 +35,6 @@ public questionBlocks = new Array<QuestionBlock>();
     let testQuestionBlock2 = new QuestionBlock();
     testQuestionBlock2.name = "Wirtschaftsinformatiker";
     testQuestionBlock2.id = 1;
-    testQuestionBlock2.description="Idiotengruppe";
     let testQuestion2 = new Question();
     testQuestion2.text = "Sind sie richtige Informatiker?";
     testQuestion2.id = 1;
@@ -84,13 +83,14 @@ public questionBlocks = new Array<QuestionBlock>();
 class QuestionBlock{
   id:number;
   name:string;
-  description:string;
   questions = new Array<Question>();
 }
 
 class Question{
   id:number;
   text: string;
+  typ: string;
+  category: string;
   answers = new Array<Answer>();
 }
 
